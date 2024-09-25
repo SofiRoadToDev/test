@@ -8,6 +8,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.Set;
+
 @Mapper(componentModel = "spring", uses = {TareaMapper.class})
 public interface CategoriaMapper {
 
@@ -17,8 +19,11 @@ public interface CategoriaMapper {
     @Mapping(target = "tareas.categoria", ignore = true)
     Categoria categoriaDtoToCategoria(CategoriaDTO categoriaDTO);
 
-    @Mapping(target = "tareas", ignore = true )
+    @Mapping(target = "tareas.categoria", ignore = true )
     CategoriaDTO categoriaToCategoriaDto(Categoria categoria);
+
+    Set<Categoria> setCategoriaDtoToCategoria(Set<CategoriaDTO> categoriaDTOSet);
+    Set<CategoriaDTO> setCategoriaToCategoriaSet(Set<Categoria> categoriaSet);
 
 
 

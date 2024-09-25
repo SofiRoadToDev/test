@@ -4,9 +4,11 @@ import com.tests.mock.DTO.TareaDTO;
 import com.tests.mock.entities.Tarea;
 import com.tests.mock.esceptions.ElemenAlreadyExistsException;
 import com.tests.mock.esceptions.ElementNotFoundException;
+import com.tests.mock.mappers.CategoriaMapper;
 import com.tests.mock.mappers.TareaMapper;
 import com.tests.mock.repositories.CategoriaRepository;
 import com.tests.mock.repositories.TareaRepository;
+import com.tests.mock.services.CategoriaService;
 import com.tests.mock.services.TareaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ import java.net.URI;
 public class MainController {
 
     private TareaService tareaService;
-    private CategoriaRepository categoriaRepository;
+    private CategoriaService categoriaService;
 
     @GetMapping()
     public ResponseEntity<?>getTareas(){
@@ -58,6 +60,11 @@ public class MainController {
     public ResponseEntity<?>eliminarTarea(@PathVariable Long id)throws ElementNotFoundException{
         tareaService.borrarTarea(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/categorias")
+    public ResponseEntity<?>getCategorias(){
+        return ResponseEntity.ok().body(categoriaService.getCategorias());
     }
 
 
