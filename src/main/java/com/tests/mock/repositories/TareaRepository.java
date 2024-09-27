@@ -7,4 +7,5 @@ import java.util.Set;
 
 public interface TareaRepository extends CrudRepository<Tarea,Long> {
     Set<Tarea> findByCategoriaNombre(String nombre);
+    Set<Tarea> findByCategoriaId(Long id);
 }

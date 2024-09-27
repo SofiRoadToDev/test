@@ -68,7 +68,10 @@ public class MainController {
         return ResponseEntity.ok().body(categoriaService.getCategorias());
     }
 
-
+    @GetMapping("/filtro-categoria")
+    public ResponseEntity<?>getByCategoriaId(@RequestParam Long id){
+        return ResponseEntity.ok().body(tareaService.findByCategoriaId(id));
+    }
 
 
 }

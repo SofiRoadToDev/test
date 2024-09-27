@@ -15,6 +15,7 @@ public interface TareaService {
     Set<TareaDTO>findAll();
     TareaDTO findById(Long id);
     Set<TareaDTO> findByCategoria(String categoria);
+    Set<TareaDTO> findByCategoriaId(Long id);
     TareaDTO crearTarea(TareaDTO tareaDTO);
     TareaDTO actualizarTarea(TareaDTO tareaDTO);
     void borrarTarea(Long id);

@@ -42,6 +42,11 @@ public class TareaServiceImpl implements TareaService{
     }
 
     @Override
+    public Set<TareaDTO> findByCategoriaId(Long id) {
+        return TareaMapper.INSTANCE.setTareaToSetTareaDto(tareaRepository.findByCategoriaId(id));
+    }
+
+    @Override
     public TareaDTO crearTarea(TareaDTO tareaDTO) {
         Optional<Categoria> categoriaExistente = categoriaRepository.findByNombre(tareaDTO.getCategoria());
         Tarea tarea = TareaMapper.INSTANCE.tareaDtoToTarea(tareaDTO);
