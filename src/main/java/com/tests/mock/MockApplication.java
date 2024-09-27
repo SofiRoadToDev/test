@@ -21,7 +21,7 @@ public class MockApplication {
 
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner initData(TareaRepository tareaRepository, CategoriaRepository categoriaRepository){
 		return args -> {
 				Tarea tarea1 = Tarea.builder()
@@ -36,6 +36,6 @@ public class MockApplication {
 
 			tareaRepository.findAll().forEach( tarea -> System.out.println(tarea.getCategoria().getNombre()));
 		};
-	}
+	}*/
 
 }

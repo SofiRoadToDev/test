@@ -21,7 +21,8 @@ public class Tarea {
 
     @Column(length = 50)
     private String nombre;
-    @Column(length = 100) private String descripcion;
+    @Column(length = 100)
+    private String descripcion;
     private String imagen;
     private Boolean isCompleted;
     @ManyToOne
