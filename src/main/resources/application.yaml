@@ -18,3 +18,8 @@ spring:
         format_sql: true
     show-sql: true
     defer-datasource-initialization: true
+  security:
+    user:
+      name: sofi
+      password: 1234sofi
+      rol: role_admin
