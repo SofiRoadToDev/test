@@ -19,6 +19,7 @@ import java.net.URI;
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/v1")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
 
     private TareaService tareaService;
