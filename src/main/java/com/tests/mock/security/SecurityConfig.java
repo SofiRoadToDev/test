@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .cors(cors ->cors.disable())
                 .authorizeHttpRequests(
-                        http -> http.requestMatchers("/api/v1/**").authenticated()
+                        http -> http.requestMatchers("/api/v1/**").hasRole("admin")
                         ).build();
     }
 }

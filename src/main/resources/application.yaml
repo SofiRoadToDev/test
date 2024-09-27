@@ -22,4 +22,4 @@ spring:
     user:
       name: sofi
       password: 1234sofi
-      rol: role_admin
+      roles: admin
