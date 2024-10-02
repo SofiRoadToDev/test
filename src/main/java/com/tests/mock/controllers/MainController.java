@@ -18,7 +18,7 @@ import java.net.URI;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/todo")
 @CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
 

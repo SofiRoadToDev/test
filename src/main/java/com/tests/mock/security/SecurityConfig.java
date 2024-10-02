@@ -18,10 +18,13 @@ public class SecurityConfig {
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(
+                        http -> http
+                                .requestMatchers("/api/v1/login").permitAll()
+                                .anyRequest().authenticated()
+                )
                 .httpBasic(Customizer.withDefaults())
                 .cors(cors ->cors.disable())
-                .authorizeHttpRequests(
-                        http -> http.requestMatchers("/api/v1/**").hasRole("admin")
-                        ).build();
+                .build();
     }
 }
